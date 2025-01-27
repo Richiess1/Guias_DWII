@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interstellar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1A202C", // Dark background color
+              secondary: "#A0AEC0", // Grayish color
+              highlight: "#ECC94B", // Gold highlight
+            },
+            fontFamily: {
+              sans: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-primary text-secondary font-sans">
+    <!-- Hero Section -->
+    <section id="hero" class="text-center py-20 bg-black text-white">
+      <h1 class="text-4xl font-bold mb-4">Interstellar</h1>
+      <p class="text-xl mb-6">Un viaje épico a través del espacio y el tiempo</p>
+      <img 
+        src="../images/peli/Interstellar-Featured.webp" 
+        alt="Interstellar Poster" 
+        class="mx-auto rounded-lg shadow-lg"
+      />
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-highlight mb-4">Sobre la Película</h2>
+        <p class="text-lg leading-7">
+          Dirigida por Christopher Nolan, Interstellar es una obra maestra
+          cinematográfica que explora el vínculo entre el amor humano, la
+          ciencia y la supervivencia de la especie. Con un elenco estelar que
+          incluye a Matthew McConaughey, Anne Hathaway y Jessica Chastain,
+          esta película te lleva a través de agujeros negros, planetas
+          extraños y más allá del horizonte de eventos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Cast Section -->
+    <section id="cast" class="bg-gray-800 text-white py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-highlight mb-8 text-center">Elenco Principal</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <img
+              src="../images/peli/matthew.jpg"
+              alt="Matthew McConaughey"
+              class="mx-auto rounded-full shadow-lg mb-4"
+            />
+            <p class="font-bold">Matthew McConaughey</p>
+            <p>Como Cooper</p>
+          </div>
+          <div class="text-center">
+            <img
+              src="../images/peli/anne.jpg"
+              alt="Anne Hathaway"
+              class="mx-auto rounded-full shadow-lg mb-4"
+            />
+            <p class="font-bold">Anne Hathaway</p>
+            <p>Como Brand</p>
+          </div>
+          <div class="text-center">
+            <img
+              src="../images/peli/Jessica.webp"
+              alt="Jessica Chastain"
+              class="mx-auto rounded-full shadow-lg mb-4"
+            />
+            <p class="font-bold">Jessica Chastain</p>
+            <p>Como Murph</p>
+          </div>
+          <div class="text-center">
+            <img
+              src="../images/peli/professor-brand1.webp"
+              alt="Michael Caine"
+              class="mx-auto rounded-full shadow-lg mb-4"
+            />
+            <p class="font-bold">Michael Caine</p>
+            <p>Como Prof. Brand</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Themes Section -->
+    <section id="themes" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-highlight mb-4">Temas de la Película</h2>
+        <p class="text-lg leading-7 mb-6">
+          Interstellar toca temas profundos como la teoría de la relatividad, los
+          límites del amor, la exploración espacial y el sacrificio por un bien
+          mayor. Cada uno de estos elementos se combina para ofrecer una
+          experiencia cinematográfica inolvidable.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white py-10 text-center">
+      <p class="text-lg">&copy; 2025 Página creada por Richie | Inspirada en Interstellar</p>
+    </footer>
+  </body>
+</html>
