@@ -15,7 +15,7 @@ export const FilterByCategory = () =>{
             <form>
                 <div className="flex flex-col md:flex-row md:items-center gap-5">
                     <label htmlFor="category">Filtrar gastos</label>
-                    <select className="bg-slate-100 p-3 flex-1 rounded" id="category">
+                    <select className="bg-slate-100 p-3 flex-1 rounded" id="category" onChange={handleChange}>
                         <option value="">--- Todas las categorias ---</option>
                         {categories.map(category =>(
                             <option value={category.id} key={category.id}>{category.name}</option>
