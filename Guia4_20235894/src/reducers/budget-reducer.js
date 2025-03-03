@@ -3,6 +3,7 @@ export const initialState = {
     modal:false,
     expenses:[],
     editingId: "",
+    currentCategory:""
 }
 
 export const budgetReducer = (state ,action)=>{
@@ -22,19 +23,25 @@ export const budgetReducer = (state ,action)=>{
                 expenses: state.expenses.filter(expense=> expense.id!=action.payload.id)
             }
         case "get-expense-by-id":
+            
             return {
                 ...state,
                 editingId: action.payload.id,
                 modal:true
             }
         case "update-expense":
+            
             return {
                 ...state,
-                expense: state.expenses.map(expense => expense.id === action.payload.expense.id ?
+                expenses: state.expenses.map(expense => expense.id === action.payload.expense.id ?
                     action.payload.expense:
                     expense), 
                 modal: false, 
                 editingId: ""
+            }
+        case "add-filter-category":
+            return{
+                ...state, currentCategory:action.payload.categoryId
             }
         default:
             return state;

@@ -20,7 +20,7 @@ export const ExpenseForm = () => {
     const state = useContext(BudgetStateContext)
     useEffect(()=>{
         if(state.editingId){
-            const editingExpense = state.expense.filter(currentExpense => currentExpense.id===state.editingId)[0]
+            const editingExpense = state.expenses.filter(currentExpense => currentExpense.id===state.editingId)[0]
             setExpense(editingExpense)
         }
     },[state.editingId])
@@ -42,7 +42,6 @@ export const ExpenseForm = () => {
     }
 
     const handleSubmit = (e) => {
-        alert(state.editingId)
         e.preventDefault();
 
         if (Object.values(expense).includes('')) {
