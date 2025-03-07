@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 export default function SearchForm() {
     const fetchCategories = useAppStore((state) => state.fetchCategories);
     const categories = useAppStore((state) => state.categories);
+    const searchRecipes = useAppStore((state) => state.searchRecipes);
 
     const [searchFilters, setSearchFilters] = useState({
         ingredient: "",
@@ -19,10 +20,24 @@ export default function SearchForm() {
 
     useEffect(() => {
         fetchCategories();
-    }, []);
+    }, [fetchCategories]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if (Object.values(searchFilters).includes("")) {
+            console.log("Todos los campos son obligatorios");
+            return;
+        }
+
+        searchRecipes(searchFilters);
+    };
 
     return (
-        <form className="md:w-1/2 xl:w-1/3 bg-orange-400 my-16 p-10 rounded-lg shadow space-y-6">
+        <form 
+            className="md:w-1/2 xl:w-1/3 bg-orange-400 my-16 p-10 rounded-lg shadow space-y-6" 
+            onSubmit={handleSubmit}  
+        >
             <div className="space-y-4">
                 <label
                     htmlFor="ingredient"
@@ -36,8 +51,8 @@ export default function SearchForm() {
                     name="ingredient"
                     className="p-3 w-full rounded-lg focus:outline-none bg-white"
                     placeholder="Nombre o Ingrediente. Ej. Vodka, Tequila, Café"
-                    value={searchFilters.ingredient}
-                    onChange={handleChange}
+                    value={searchFilters.ingredient} 
+                    onChange={handleChange} 
                 />
             </div>
             <div className="space-y-4">
@@ -51,8 +66,8 @@ export default function SearchForm() {
                     name="category"
                     id="category"
                     className="p-3 w-full rounded-lg focus:outline-none bg-white"
-                    value={searchFilters.category}
-                    onChange={handleChange}
+                    value={searchFilters.category} 
+                    onChange={handleChange} 
                 >
                     <option value=""> --- Seleccione --- </option>
                     {categories.map((category) => (
