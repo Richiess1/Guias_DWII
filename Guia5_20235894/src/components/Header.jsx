@@ -1,13 +1,14 @@
-import {Link, useLocation} from 'react-router'
+import { Link, useLocation } from 'react-router'
+import SearchForm from './SearchForm'
 
-export default function Header (){
-    const {pathname} = useLocation()
+export default function Header() {
+    const { pathname } = useLocation()
 
     const isHome = pathname === '/'
 
 
-    return(
-        <header className='bg-slate-800'>
+    return (
+        <header className={isHome ? "bg-[url('/bg.jpg')] bg-center bg-cover" : "bg-slate-800"}>
             <div className='mx-auto container px-5 py-16'>
                 <div className='flex justify-between items-center'>
                     <div>
@@ -17,7 +18,11 @@ export default function Header (){
                         <Link to="/" className='text-white uppercase font-bold'>Inicio</Link>
                         <Link to="/favoritos" className='text-white uppercase font-bold'>Favoritos</Link>
                     </nav>
+
                 </div>
+                {isHome && (
+                    <SearchForm />
+                )}
             </div>
         </header>
     )
