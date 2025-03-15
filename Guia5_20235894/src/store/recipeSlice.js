@@ -21,9 +21,9 @@ export const createRecipesSlice = (set) => ({
             modal:true
         })
     },
-    colseModal: ()=>{
+    closeModal: ()=>{
         set({
-            medal: false,
+            modal: false,
             selectedRecipe:{}
         })
     }

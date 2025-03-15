@@ -14,7 +14,7 @@ export async function getRecipes(filters) {
 }
 
 export async function getRecipeById(id){
-    const url = `https://www.theconktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
     const {data} = await axios(url);
     return data.drinks?data.drinks[0]:null;
 }
